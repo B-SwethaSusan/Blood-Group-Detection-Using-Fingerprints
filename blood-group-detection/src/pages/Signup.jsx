@@ -285,14 +285,69 @@
 
 // export default Signup;
 
+// last modified one
+// import React, { useState } from "react";
+// import axios from "axios";
+// import { motion } from "framer-motion"; // Import Framer Motion
+// import "../styles/signup.css"; // Ensure your styles are linked
+
+// const Signup = () => {
+//   const [formData, setFormData] = useState({ name: "", email: "", password: "" });
+
+//   const handleChange = (e) => {
+//     setFormData({ ...formData, [e.target.name]: e.target.value });
+//   };
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     try {
+//       const res = await axios.post("http://localhost:8000/submit", formData);
+//       alert(res.data.password);
+//       setFormData({ name: "", email: "", password: "" }); // Clear form after submission
+//     } catch (err) {
+//       alert("Error submitting form");
+//     }
+//   };
+
+//   return (
+//     <div className="signup-page">
+//       <motion.div
+//         className="signup-container"
+//         initial={{ opacity: 0, y: 50 }}
+//         animate={{ opacity: 1, y: 0 }}
+//         transition={{ duration: 0.8, ease: "easeOut" }}
+//       >
+//         <h2>Signup Form</h2>
+//         <form onSubmit={handleSubmit}>
+//           <input type="text" name="name" placeholder="Name" value={formData.name} onChange={handleChange} required />
+//           <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} required />
+//           <input type="text" name="password" placeholder="Password" value={formData.password} onChange={handleChange} required />
+//           <motion.button
+//             type="submit"
+//             whileHover={{ scale: 1.1 }}
+//             whileTap={{ scale: 0.9 }}
+//           >
+//             Submit
+//           </motion.button>
+//         </form>
+//       </motion.div>
+//     </div>
+//   );
+// };
+
+// export default Signup;
+
 
 import React, { useState } from "react";
 import axios from "axios";
-import { motion } from "framer-motion"; // Import Framer Motion
-import "../styles/signup.css"; // Ensure your styles are linked
+import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom"; // ✅ Import useNavigate
+import "../styles/signup.css";
 
 const Signup = () => {
   const [formData, setFormData] = useState({ name: "", email: "", password: "" });
+  const [error, setError] = useState(""); // ✅ Error state
+  const navigate = useNavigate(); // ✅ Initialize useNavigate
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -300,12 +355,15 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError(""); // Reset errors before submitting
+
     try {
       const res = await axios.post("http://localhost:8000/submit", formData);
-      alert(res.data.password);
-      setFormData({ name: "", email: "", password: "" }); // Clear form after submission
+      alert("✅ Signup successful! Redirecting to login...");
+      setFormData({ name: "", email: "", password: "" }); // Clear form
+      navigate("/login"); // ✅ Redirect to Login Page
     } catch (err) {
-      alert("Error submitting form");
+      setError("❌ Error submitting form. Please try again.");
     }
   };
 
@@ -318,16 +376,17 @@ const Signup = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <h2>Signup Form</h2>
+        {error && <p style={{ color: "red" }}>{error}</p>} {/* ✅ Show error message if any */}
         <form onSubmit={handleSubmit}>
           <input type="text" name="name" placeholder="Name" value={formData.name} onChange={handleChange} required />
           <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} required />
-          <input type="text" name="password" placeholder="Password" value={formData.password} onChange={handleChange} required />
+          <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} required />
           <motion.button
             type="submit"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            Submit
+            Signup
           </motion.button>
         </form>
       </motion.div>
@@ -336,5 +395,3 @@ const Signup = () => {
 };
 
 export default Signup;
-
-

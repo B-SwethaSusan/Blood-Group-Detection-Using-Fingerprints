@@ -3,10 +3,15 @@
 @tailwind utilities;
 
 /* Optional: Global styles */
-body, html {
+
+/* index.css or App.css */
+html, body {
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth;
-  overflow-x: hidden;
+  height: auto;
+  min-height: 100vh;
+  overflow-x: hidden; /* horizontal scroll off */
+  overflow-y: auto;   /* vertical scroll on */
 }
+
 

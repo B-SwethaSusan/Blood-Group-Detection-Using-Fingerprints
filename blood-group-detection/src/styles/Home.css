@@ -1,211 +1,112 @@
-/* General Styles */
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background: #ff5733;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
+/* Home.css */
+body, html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
 }
 
 .home {
   position: relative;
-  height: 100vh;
+  /* padding-top: 100px; Leaves space for fixed navbar */
+  min-height: 100vh;
+  background-image: url('../assets/home-bg.jpg'); /* Replace with your actual image path */
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   text-align: center;
-  background: url('../assets/home-bg.jpg') no-repeat center center/cover;
+  color: white;
+  height: 100vh;
+  background-size: cover;
 }
 
 .overlay {
-  background: rgba(0, 0, 0, 0.5);
-  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for contrast */
+  padding: 40px;
   border-radius: 10px;
-  color: white;
-}
-
-/* About Section */
-.about-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 50px;
-  padding: 80px 10%;
-  background-color: #f9f9f9;
-  font-size: 1.2rem;
-}
-
-/* Left Side - About Us */
-.about-left {
-  flex: 1;
-  text-align: left;
-}
-
-/* Right Side - Our Team */
-.about-right {
-  flex: 1;
-  text-align: center;
-}
-
-
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .about-container {
-      flex-direction: column;
-      text-align: center;
-  }
-
-  .team-grid {
-      grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Contact Section */
-.contact-section {
-  text-align: center;
-  padding: 50px;
-  background-color: #cecad1a9;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  font-size: 30px;
-}
-
-.contact-section p {
-  font-size: 25px;
-}
-
-.contact-section a {
-  text-decoration: none;
-  color: #26ac38;
-  font-weight: bold;
-  font-size: 25px;
-}
-
-/* Social Media Icons */
-.social-icons {
-  margin-top: 15px;
-}
-
-.social-icons a {
-  font-size: 25px;
-  margin: 0 10px;
-  color: #f8f7f7;
-  transition: 0.3s;
-}
-
-.social-icons a:hover {
-  color: #007bff;
-}
-
-/* Query Form */
-.query-form {
-  margin-top: 30px;
-}
-
-.query-form textarea {
-  width: 80%;
-  height: 100px;
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  resize: none;
-}
-
-.query-form button {
-  margin-top: 10px;
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.query-form button:hover {
-  background-color: #0056b3;
-}
-
-.success-password {
-  margin-top: 10px;
-  color: green;
-  font-weight: bold;
-}
-
-.home-container {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-}
-
-
-
-.stats-section {
-  width: 35%;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.stat-box {
-  background: #f5f5f5;
-  padding: 15px;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.team-container {
-  text-align: center;
-  margin: 40px 0;
-}
-
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  justify-content: center;
   align-items: center;
 }
 
+.overlay p {
+  font-size: large;
+}
+
+
+.about-container, .contact-section {
+  padding: 80px 20px;
+  background-color: #f0f0f0;
+}
+
+.team-section {
+  margin-bottom: 40px;
+}
+
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
 .team-member {
+  width: 200px;
   text-align: center;
 }
 
 .team-member img {
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: auto;
   border-radius: 50%;
+  object-fit: cover;
 }
 
-/* Query Submission Box */
-.query-section {
+.stats-section {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.stat-box {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
   text-align: center;
-  margin: 40px 0;
+}
+
+.contact-section {
+  background: #fff;
+  color: #333;
+  text-align: center;
 }
 
 .query-section textarea {
   width: 80%;
   height: 100px;
   padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+  margin: 10px 0;
 }
 
 .query-section button {
-  display: block;
-  margin: 10px auto;
   padding: 10px 20px;
-  background-color: red;
+  background: #007bff;
   color: white;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
 }
 
-.query-section button:hover {
-  background-color: darkred;
+.social-links a {
+  margin: 0 10px;
+  font-size: 24px;
+  color: #333;
+}
+
+
+
+.parallax-section {
+  height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
 }
