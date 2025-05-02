@@ -43,88 +43,12 @@
 
 // export default Navbar;
 
-//after changing code to 
-// import { Link as ScrollLink } from "react-scroll";
-// import { NavLink, useLocation } from "react-router-dom";
-// import { useEffect, useState } from "react";
-// import "./Navbar.css";
-
-
-// const Navbar = () => {
-//     const [menuOpen, setMenuOpen] = useState(false);
-//     const location = useLocation();
-
-//     useEffect(() => {
-//         setMenuOpen(false);
-//     }, [location]);
-
-//     return (
-//         <nav className="navbar">
-//             <div className="logo">Blood Group Detection</div>
-
-//             {/* Hamburger Menu */}
-//             <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
-//                 ☰
-//             </div>
-
-//             <ul className={menuOpen ? "nav-links open" : "nav-links"}>
-//                 <li>
-//                     <ScrollLink
-//                         to="home"
-//                         smooth={true}
-//                         duration={500}
-//                         offset={-80}
-//                         className="nav-link"
-//                         activeClass="active"
-//                     >
-//                         Home
-//                     </ScrollLink>
-//                 </li>
-//                 <li>
-//                     <ScrollLink
-//                         to="about"
-//                         smooth={true}
-//                         duration={500}
-//                         offset={-80}
-//                         className="nav-link"
-//                         activeClass="active"
-//                     >
-//                         About
-//                     </ScrollLink>
-//                 </li>
-//                 {/* <li>
-//                     {location.pathname === "/" ? (
-//                         <ScrollLink
-//                             to="contact"
-//                             smooth={true}
-//                             duration={500}
-//                             offset={-80}
-//                             className="nav-link"
-//                             activeClass="active"
-//                         >
-//                             Contact
-//                         </ScrollLink>
-//                     ) : (
-//                         <NavLink to="/#contact" className="nav-link">Contact</NavLink>
-//                     )}
-//                 </li> */}
-//                 {/* <li><NavLink to="/predict" className="nav-link">Predict</NavLink></li>  */}
-//                 <li><NavLink to="/login?redirect=/predict" className="nav-link">Predict</NavLink></li> 
-
-//                 <li><NavLink to="/signup" className="nav-link">Sign Up</NavLink></li>
-//                 <li><NavLink to="/login" className="nav-link">Login</NavLink></li>
-//             </ul>
-//         </nav>
-//     );
-// };
-
-// export default Navbar;
-
-//new
+// after changing code to 
 import { Link as ScrollLink } from "react-scroll";
 import { NavLink, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./Navbar.css";
+
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -156,26 +80,6 @@ const Navbar = () => {
                         Home
                     </ScrollLink>
                 </li> */}
-
-                <li>
-                {location.pathname === "/" ? (
-                    <ScrollLink
-                    to="home"
-                    smooth={true}
-                    duration={500}
-                    offset={-80}
-                    className="nav-link"
-                    activeClass="active"
-                    >
-                    Home
-                    </ScrollLink>
-                ) : (
-                    <NavLink to="/" className="nav-link">Home</NavLink>
-                )}
-                </li>
-
-
-
                 {/* <li>
                     <ScrollLink
                         to="about"
@@ -189,20 +93,26 @@ const Navbar = () => {
                     </ScrollLink>
                 </li> */}
                 {/* <li>
-                    <NavLink to="/predict" className="nav-link" activeClassName="active">
-                        Predict
-                    </NavLink>
+                    {location.pathname === "/" ? (
+                        <ScrollLink
+                            to="contact"
+                            smooth={true}
+                            duration={500}
+                            offset={-80}
+                            className="nav-link"
+                            activeClass="active"
+                        >
+                            Contact
+                        </ScrollLink>
+                    ) : (
+                        <NavLink to="/#contact" className="nav-link">Contact</NavLink>
+                    )}
                 </li> */}
-                <li>
-                    <NavLink to="/signup" className="nav-link" activeClassName="active">
-                        Sign Up
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink to="/login" className="nav-link" activeClassName="active">
-                        Login
-                    </NavLink>
-                </li>
+                {/* <li><NavLink to="/predict" className="nav-link">Predict</NavLink></li>  */}
+                <li><NavLink to="/login?redirect=/predict" className="nav-link">Predict</NavLink></li> 
+
+                <li><NavLink to="/signup" className="nav-link">Sign Up</NavLink></li>
+                <li><NavLink to="/login" className="nav-link">Login</NavLink></li>
             </ul>
         </nav>
     );
@@ -210,6 +120,133 @@ const Navbar = () => {
 
 export default Navbar;
 
+//new
+// import { Link as ScrollLink } from "react-scroll";
+// import { NavLink, useLocation } from "react-router-dom";
+// import { useEffect, useState } from "react";
+// import "./Navbar.css";
+
+// const Navbar = () => {
+//     const [menuOpen, setMenuOpen] = useState(false);
+//     const location = useLocation();
+
+//     useEffect(() => {
+//         setMenuOpen(false);
+//     }, [location]);
+
+//     return (
+//         <nav className="navbar">
+//             <div className="logo">Blood Group Detection</div>
+
+//             {/* Hamburger Menu */}
+//             <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
+//                 ☰
+//             </div>
+
+//             <ul className={menuOpen ? "nav-links open" : "nav-links"}>
+//                 {/* <li>
+//                     <ScrollLink
+//                         to="home"
+//                         smooth={true}
+//                         duration={500}
+//                         offset={-80}
+//                         className="nav-link"
+//                         activeClass="active"
+//                     >
+//                         Home
+//                     </ScrollLink>
+//                 </li> */}
+//                 <ScrollLink to="home" smooth={true} duration={500}>Home</ScrollLink>
+// <ScrollLink to="about" smooth={true} duration={500}>About</ScrollLink>
+// <ScrollLink to="contact" smooth={true} duration={500}>Contact</ScrollLink>
+// <ScrollLink to="stats" smooth={true} duration={500}>Stats</ScrollLink>
+// <ScrollLink to="query" smooth={true} duration={500}>Query</ScrollLink>
+// <ScrollLink to="social" smooth={true} duration={500}>Social</ScrollLink>
+
+//                 <li>
+//                 {location.pathname === "/" ? (
+//                     <ScrollLink
+//                     to="home"
+//                     smooth={true}
+//                     duration={500}
+//                     offset={-80}
+//                     className="nav-link"
+//                     activeClass="active"
+//                     >
+//                     Home
+//                     </ScrollLink>
+//                 ) : (
+//                     <NavLink to="/" className="nav-link">Home</NavLink>
+//                 )}
+//                 </li>
 
 
 
+//                 {/* <li>
+//                     <ScrollLink
+//                         to="about"
+//                         smooth={true}
+//                         duration={500}
+//                         offset={-80}
+//                         className="nav-link"
+//                         activeClass="active"
+//                     >
+//                         About
+//                     </ScrollLink>
+//                 </li> */}
+//                 {/* <li>
+//                     <NavLink to="/predict" className="nav-link" activeClassName="active">
+//                         Predict
+//                     </NavLink>
+//                 </li> */}
+//                 <li>
+//                     <NavLink to="/signup" className="nav-link" activeClassName="active">
+//                         Sign Up
+//                     </NavLink>
+//                 </li>
+//                 <li>
+//                     <NavLink to="/login" className="nav-link" activeClassName="active">
+//                         Login
+//                     </NavLink>
+//                 </li>
+//             </ul>
+//         </nav>
+//     );
+// };
+
+// export default Navbar;
+
+
+
+
+// src/components/Nav.jsx
+
+// import React from 'react';
+// import { Link as ScrollLink } from "react-scroll";
+
+// import "./Navbar.css";
+
+// const Navbar = () => {
+//   return (
+//     <nav style={{ display: 'flex', justifyContent: 'space-between', padding: '1rem', background: '#eee' }}>
+//       <div className="logo">🩸 Blood Detector</div>
+//       <div className="nav-links">
+// <ScrollLink to="home" smooth={true} duration={500}>Home</ScrollLink>
+//         <ScrollLink to="about" smooth={true} duration={500}>About</ScrollLink>
+    
+//         <ScrollLink to="contact" smooth={true} duration={500}>Contact</ScrollLink>
+    
+//         <ScrollLink to="stats" smooth={true} duration={500}>Stats</ScrollLink>
+    
+//         <ScrollLink to="query" smooth={true} duration={500}>Query</ScrollLink>
+//         <ScrollLink to="social" smooth={true} duration={500}>Social</ScrollLink>
+     
+
+    
+
+//       </div>
+//     </nav>
+//   );
+// };
+
+// export default Navbar;

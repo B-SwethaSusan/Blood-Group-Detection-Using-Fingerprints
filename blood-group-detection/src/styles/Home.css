@@ -8,8 +8,8 @@ body, html {
 .home {
   position: relative;
   /* padding-top: 100px; Leaves space for fixed navbar */
-  min-height: 100vh;
-  background-image: url('../assets/home-bg.jpg'); /* Replace with your actual image path */
+  min-height:100vh;
+    background-image: url('../assets/home-bg.jpg'); /* Replace with your actual image path */
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
@@ -17,8 +17,8 @@ body, html {
   justify-content: center;
   text-align: center;
   color: white;
-  height: 100vh;
   background-size: cover;
+  z-index: 1;
 }
 
 .overlay {
@@ -36,6 +36,8 @@ body, html {
 .about-container, .contact-section {
   padding: 80px 20px;
   background-color: #f0f0f0;
+  position: relative;
+  z-index: 2;
 }
 
 .team-section {
@@ -82,7 +84,7 @@ body, html {
 
 .query-section textarea {
   width: 80%;
-  height: 100px;
+  
   padding: 10px;
   margin: 10px 0;
 }
@@ -105,7 +107,7 @@ body, html {
 
 
 .parallax-section {
-  height: 100vh;
+  
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
